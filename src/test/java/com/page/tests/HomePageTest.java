@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -31,8 +31,8 @@ public class HomePageTest
     @BeforeTest
     public void beforeTest()
     {
-        System.setProperty("webdriver.chrome.driver","./driver/chromedriver");
-        this.driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver","./driver/geckodriver");
+        this.driver = new FirefoxDriver();
         this.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         this.driver.manage().deleteAllCookies();
     }
